@@ -1,4 +1,5 @@
-number_1 = input("Gimme a number")
-operator = (input("type one of: + - / *"))
-number_2 = input("Gimme a 2nd number")
+number_1 = input("Number 1:")
+print("Select an operator")
+operator = (input("Operator:"))
+number_2 = input("Number 2:")
 print(eval(number_1 + operator + number_2))
