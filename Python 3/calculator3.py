@@ -5,48 +5,21 @@
 # Improved certain sections and added various other functions
 import math
 def mode():
-    mode1 = True
-    mode2 = False
-    mode = input('''Select calculator mode:
+    mode = True
+    while mode == True:
+        try:
+            return {"1":1,"2":2}[input('''
+==========================
+MODE 1 - Default Calculator                 |
+MODE 2 - Conversion                          |
 ===========================
-Mode1 - Default (Type: 1)
-Mode2 - Special (Type: 2)
-===========================
-Enter Here: ''')
-    if mode == '1':
-        print('''Mode 1 has been selected!
+Type 1 or 2 ONLY
+Mode Number : ''')]
+        except (ValueError,TypeError,KeyError):
+            print("Please select only 1 or 2.")
+
         
-
-===========================
-''')
-        mode1 = True
-        mode2 = False
-    elif mode =='2':
-        print('''Mode 2 has been selected!
-
-===========================
-''')
-        mode1 = False
-        mode2 = True
-    elif mode != '1' or '2':
-        print("Wrong values!, use only 1 or 2")
-
-    while mode1 == True:
-        try:
-            x = int(input("Number : "))
-            break
-        except ValueError:
-            print("Error 1")
-
-    while mode2 == True:
-        try:
-            x = int(input("Number from mode2 : "))
-            break
-        except ValueError:
-            print("Error 2!")
-
 mode()
-
 
 def calculator():
 
