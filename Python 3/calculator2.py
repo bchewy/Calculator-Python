@@ -6,7 +6,7 @@
 import math 
 def calculator():
 
-    number_1 = int(input('Please enter the first number: '))
+    number_1 = float(input('Please enter the first number: '))
     operation = input('''
 Please type in the math operation you would like to complete:
 + for addition
@@ -14,28 +14,40 @@ Please type in the math operation you would like to complete:
 * for multiplication
 / for division
 sqrt for squareroot
+degtorad for Degree to Radian Conversion
+radtodeg for Radian to Degree Conversion
 
 Enter operator: ''')
-    number_2 = int(input('Please enter the second number: '))
+    if operation =='degtorad':
+        print('{} deg converted to ='.format(number_1),end='')
+        print(math.radians(number_1),'radians')
 
-    if operation == '+':
-        print('{} + {} = '.format(number_1, number_2), end='')
-        print(number_1 + number_2)
-    elif operation == '-':
-        print('{} - {} = '.format(number_1, number_2), end='')
-        print(number_1 - number_2)
-
-    elif operation == '*':
-        print('{} * {} = '.format(number_1, number_2), end='')
-        print(number_1 * number_2)
-
-    elif operation == '/':
-        print('{} / {} = '.format(number_1, number_2), end='')
-        print(number_1 / number_2)
-        
-    elif operation == 'sqrt':
+    elif operation =='radtodeg':
+        print('{} rad converted to ='.format(number_1),end='')
+        print(math.degrees(number_1),'degrees')
+    elif operation =='sqrt':
         print('{} square root = '.format(number_1), end='')
         print(math.sqrt(number_1))
+        
+    elif operation != 'sqrt' or 'degtorad' or 'radtodeg':
+        number_2 = int(input('Please enter the second number: '))
+
+    
+        if operation == '+':
+            print('{} + {} = '.format(number_1, number_2), end='')
+            print(number_1 + number_2)
+        elif operation == '-':
+            print('{} - {} = '.format(number_1, number_2), end='')
+            print(number_1 - number_2)
+
+        elif operation == '*':
+            print('{} * {} = '.format(number_1, number_2), end='')
+            print(number_1 * number_2)
+
+        elif operation == '/':
+            print('{} / {} = '.format(number_1, number_2), end='')
+            print(number_1 / number_2)
+
 
     else:
         print('You have not typed a valid operator, please run the program again.')
