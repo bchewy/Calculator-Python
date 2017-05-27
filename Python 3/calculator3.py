@@ -36,11 +36,14 @@ degtorad for Degree to Radian Conversion
 radtodeg for Radian to Degree Conversion
 pi/ - Number 1 / pi
 pi* - Number 1 * pi
+fact - Factorial of a no1
 ===========================
 Enter operator: ''')
     if operation =='degtorad':
         print('{} deg converted to ='.format(number_1),end='')
         print(math.radians(number_1),'radians')
+    elif operation =='fact':
+        print("{}'s factorial is {}".format(number_1,math.factorial(number_1)))
 
     elif operation =='radtodeg':
         print('{} rad converted to ='.format(number_1),end='')
