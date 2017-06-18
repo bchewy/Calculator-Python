@@ -1,5 +1,4 @@
 ## Calculator-Python
-# Bchewy.me
 
 This is a python project to help show how python works!:
 ```
