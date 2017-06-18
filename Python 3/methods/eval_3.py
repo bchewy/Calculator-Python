@@ -1,5 +1,0 @@
-number_1 = input("Number 1:")
-print("Select an operator")
-operator = (input("Operator:"))
-number_2 = input("Number 2:")
-print(eval(number_1 + operator + number_2))

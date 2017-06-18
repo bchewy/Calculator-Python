@@ -28,3 +28,6 @@ elif op=="*":
     print("Result:",no1 * no2)
 elif op=="**":
     print("Result:",no1 ** no2)
+
+# For this program, you're using the index of a list to select the operator!
+# Another cool way to make a calculator program!
