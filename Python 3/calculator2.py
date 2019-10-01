@@ -58,6 +58,7 @@ Please type in the math operation you would like to complete:
 - for subtraction
 * for multiplication
 / for division
+^ for power
 sqrt for squareroot
 degtorad for Degree to Radian Conversion
 radtodeg for Radian to Degree Conversion
@@ -68,7 +69,6 @@ Enter operator: ''')
     if operation =='degtorad':
         print('{} deg converted to ='.format(number_1),end='')
         print(math.radians(number_1),'radians')
-
     elif operation =='radtodeg':
         print('{} rad converted to ='.format(number_1),end='')
         print(math.degrees(number_1),'degrees')
@@ -76,12 +76,11 @@ Enter operator: ''')
         print('{} square root = '.format(number_1), end='')
         print(math.sqrt(number_1))
     elif operation == 'pi/':
-            print('{} / pi = '.format(number_1), end='')
-            print(number_1 / math.pi)
+        print('{} / pi = '.format(number_1), end='')
+        print(number_1 / math.pi)
     elif operation == 'pi*':
-            print('{} * pi = '.format(number_1), end='')
-            print(number_1 * math.pi)
-        
+        print('{} * pi = '.format(number_1), end='')
+        print(number_1 * math.pi)
     elif operation != 'sqrt' or 'degtorad' or 'radtodeg' or 'pi/' or 'pi*':
         number_2 = int(input('Please enter the second number: '))
         if operation == '+':
@@ -90,15 +89,15 @@ Enter operator: ''')
         elif operation == '-':
             print('{} - {} = '.format(number_1, number_2), end='')
             print(number_1 - number_2)
-
         elif operation == '*':
             print('{} * {} = '.format(number_1, number_2), end='')
             print(number_1 * number_2)
-
         elif operation == '/':
             print('{} / {} = '.format(number_1, number_2), end='')
             print(number_1 / number_2)
-
+        elif operation == '^':
+            print('{} ^ {} = '.format(number_1, number_2), end='')
+            print(number_1 ** number_2)
 
     else:
         print('You have not typed a valid operator, please run the program again.')
