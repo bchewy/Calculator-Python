@@ -1,66 +1,119 @@
 # content of test_sample.py
 def add(*args):
-    return sum(args[0])
+    if(len(args) > 10):
+        print("error > 10 values given")
+        return "Error: >10 Values"
+
+    result = args[0]
+    try:
+        for i in range(1, len(args)):
+            result = result + args[i]
+
+        print("Result is", result)
+        return result
+    except:
+        pass
 
 
 def subtract(*args):
-    total = 0
-    for i in args:
-        for x in i:
-            total -= x
-    return total
+    if(len(args) > 10):
+        print("error > 10 values given")
+        return "Error: >10 Values"
+
+    result = args[0]
+    try:
+        for i in range(1, len(args)):
+            result = result - args[i]
+
+        print("Result is", result)
+        return result
+    except:
+        pass
 
 
-# Cannot take in any zero values or the resulting total will be zero.
 def multiply(*args):
-    total = 1
-    for i in args:
-        for x in i:
-            print(x)
-            total = (total * x)
-            print(total)
-    return total
+    if(len(args) > 10):
+        print("error > 10 values given")
+        return "Error: >10 Values"
 
-# Cannot take in any zero values or the resulting total will be zero.
+    result = args[0]
+    try:
+        for i in range(1, len(args)):
+            result = result * args[i]
+
+        print("Result is", result)
+        return result
+    except ZeroDivisionError:
+        print("Multiplication by zero error at number", i+1)
+        return ZeroDivisionError
 
 
 def divide(*args):
-    for i in args:
-        for x in i:  # i being the array
-            total = x
-    return total
+    if(len(args) > 10):
+        print("error > 10 values given")
+        return "Error: >10 Values"
+
+    result = args[0]
+    try:
+        for i in range(1, len(args)):
+            result = result / args[i]
+
+        print("Result is", result)
+        return result
+    except ZeroDivisionError:
+        print("Division by zero error at number", i+1)
+        return ZeroDivisionError
 
 
-print(divide([10, 2]))
+print(divide(10, 2))
+print(multiply(10, 2))
+print(add(10, 2))
+print(subtract(10, 2))
 
 
 def test_add_positive():
-    assert add([1, 2, 3, 4]) == 10
+    assert add(1, 2, 3, 4) == 10
 
 
 def test_add_negative():
-    assert add([1, 2, 3, 5]) != 10
+    assert add(1, 2, 3, 5) != 10
 
 
 def test_subtract_positive():
-    assert subtract([1, 2, 3, 4]) == -10
+    assert subtract(1, 2, 3, 4) == -8
 
 
 def test_subtract_negative():
-    assert subtract([1, 2, 3, 5]) != -10
+    assert subtract(1, 2, 3, 5) != -10
 
 
 def test_multiply_positive():
-    assert multiply([5, 2]) == 10
+    assert multiply(5, 2) == 10
 
 
 def test_multiply_negative():
-    assert multiply([1, 2, 3, 5]) != 24
+    assert multiply(1, 2, 3, 5) != 24
 
 
 def test_division_positive():
-    assert divide([10, 2]) == 5
+    assert divide(10, 2) == 5
 
 
 def test_division_negative():
-    assert divide([10, 3]) != 5
+    assert divide(10, 3) != 5
+
+
+def test_add_length_positive():
+    assert add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) == 55
+
+
+def test_add_length_negative():
+    assert add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11) == "Error: >10 Values"
+
+
+def test_subtract_length_positive():
+    assert subtract(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) == -53
+
+
+def test_subtract_length_negative():
+    assert subtract(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11) == "Error: >10 Values"
