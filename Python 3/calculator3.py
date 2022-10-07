@@ -77,7 +77,7 @@ Enter operator: ''')
 
 
     else:
-        print('You have not typed a valid operator, please run the program again.')
+        print('You are not typed a valid operator, please run the program again.')
 
     # Add again() function to calculate() function
     again()
